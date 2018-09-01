@@ -1,18 +1,14 @@
 package com.tapadoo.alerter
 
-import android.app.Activity
-import android.graphics.Bitmap
-import android.graphics.ColorFilter
-import android.graphics.PorterDuff
-import android.graphics.Typeface
-import android.graphics.drawable.Drawable
+import android.app.*
+import android.graphics.*
+import android.graphics.drawable.*
 import android.support.annotation.*
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewCompat
-import android.view.View
-import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import java.lang.ref.WeakReference
+import android.support.v4.content.*
+import android.support.v4.view.*
+import android.view.*
+import android.view.animation.*
+import java.lang.ref.*
 
 /**
  * Alert helper class. Will attach a temporary layout to the current activity's content, on top of
@@ -503,6 +499,12 @@ class Alerter private constructor() {
      */
     fun addButton(text: String, @StyleRes style: Int = R.style.AlertButton, onClick: View.OnClickListener): Alerter {
         alert?.addButton(text, style, onClick)
+
+        return this
+    }
+
+    fun setCustomView(view: View): Alerter {
+        alert?.showCustomView(view)
 
         return this
     }

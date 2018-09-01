@@ -1,24 +1,20 @@
 package com.tapadoo.alerter
 
-import android.annotation.TargetApi
-import android.content.Context
+import android.annotation.*
+import android.content.*
 import android.graphics.*
-import android.graphics.drawable.Drawable
-import android.os.Build
+import android.graphics.drawable.*
+import android.os.*
 import android.support.annotation.*
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewCompat
-import android.support.v7.content.res.AppCompatResources
+import android.support.v4.content.*
+import android.support.v4.view.*
+import android.support.v7.content.res.*
 import android.support.v7.view.ContextThemeWrapper
-import android.text.TextUtils
-import android.util.AttributeSet
-import android.util.Log
+import android.text.*
+import android.util.*
 import android.view.*
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.Button
-import android.widget.FrameLayout
-import android.widget.LinearLayout
+import android.view.animation.*
+import android.widget.*
 import kotlinx.android.synthetic.main.alerter_alert_view.view.*
 
 /**
@@ -445,6 +441,12 @@ class Alert @JvmOverloads constructor(context: Context, attrs: AttributeSet? = n
      */
     fun isDismissable(): Boolean {
         return isDismissable
+    }
+
+    fun showCustomView(view: View) {
+        flAlertBackground.visibility = View.GONE
+        flAlertCustomLayout.visibility = View.VISIBLE
+        flAlertCustomLayout.addView(view)
     }
 
     /**
